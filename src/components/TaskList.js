@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import TaskItem from './TaskItem';
 import '../styles/TaskList.css';
 
-const TaskList = () => {
-  const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    // Fetch tasks from the API
-    // axios.get('/api/tasks').then(response => setTasks(response.data));
-  }, []);
-
+const TaskList = ({ tasks }) => {
   return (
     <div className="task-list">
       {tasks.map(task => (
-        <TaskItem key={task.id} task={task} />
+        <TaskItem key={task.taskId} task={task} />
       ))}
     </div>
   );
