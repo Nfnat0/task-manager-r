@@ -1,11 +1,13 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 const About = () => {
   return (
-    <div className="about">
-      <h2>About Task Manager R</h2>
-      <p>This is a simple task management application built with React.</p>
-    </div>
+    <Container>
+      <Typography variant="h4" gutterBottom>About</Typography>
+      <Typography variant="body1">This is the About page.</Typography>
+    </Container>
   );
 };
 

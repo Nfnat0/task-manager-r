@@ -1,0 +1,15 @@
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+
+const Footer = () => {
+  return (
+    <Box sx={{ bgcolor: 'background.paper', p: 2, position: 'fixed', bottom: 0, width: '100%', textAlign: 'center' }}>
+      <Typography variant="body2" color="textSecondary">
+        &copy; {new Date().getFullYear()} Task Manager R. All rights reserved.
+      </Typography>
+    </Box>
+  );
+};
+
+export default Footer;

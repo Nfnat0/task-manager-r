@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Container from '@mui/material/Container';
 import TaskList from '../components/TaskList';
 import AddTask from '../components/AddTask';
 import { createTask, getTasks } from '../api/taskApi';
@@ -21,10 +22,10 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <Container>
       <AddTask onAdd={handleAddTask} />
       <TaskList tasks={tasks} />
-    </div>
+    </Container>
   );
 };
 
