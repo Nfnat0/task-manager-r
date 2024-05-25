@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Container from '@mui/material/Container';
-import TaskList from '../components/TaskList';
-import AddTask from '../components/AddTask';
-import { createTask, getTasks } from '../api/taskApi';
+import React, { useState, useEffect } from "react";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import TaskList from "../components/TaskList";
+import { getTasks } from "../api/taskApi";
+import { Link } from "react-router-dom";
+// import './Home.css';
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
@@ -16,15 +18,21 @@ const Home = () => {
     fetchTasks();
   }, []);
 
-  const handleAddTask = async (task) => {
-    const newTask = await createTask(task);
-    setTasks([...tasks, newTask]);
-  };
-
   return (
-    <Container>
-      <AddTask onAdd={handleAddTask} />
-      <TaskList tasks={tasks} />
+    <Container className="home-container">
+      <div className="home-header">
+        <Button
+          variant="contained"
+          color="primary"
+          component={Link}
+          to="/add-task"
+        >
+          Add Task
+        </Button>
+      </div>
+      <div className="task-list-container">
+        <TaskList tasks={tasks} />
+      </div>
     </Container>
   );
 };

@@ -1,0 +1,10 @@
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .add-task-form button {
+    align-self: flex-start;
+  }
+  
