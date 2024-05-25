@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import TaskList from "../components/TaskList";
-import { getTasks } from "../api/taskApi";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import TaskList from '../components/TaskList';
+import { getTasks, updateTask } from '../api/taskApi';
+import { Link } from 'react-router-dom';
 // import './Home.css';
 
 const Home = () => {
@@ -18,20 +19,20 @@ const Home = () => {
     fetchTasks();
   }, []);
 
+  const handleTaskCompletion = async (task) => {
+    const updatedTask = { ...task, completed: true };
+    await updateTask(task.taskId, updatedTask);
+    setTasks(tasks.map(t => (t.taskId === task.taskId ? updatedTask : t)));
+  };
+
   return (
     <Container className="home-container">
       <div className="home-header">
-        <Button
-          variant="contained"
-          color="primary"
-          component={Link}
-          to="/add-task"
-        >
-          Add Task
-        </Button>
+        <Typography variant="h4">Task List</Typography>
+        <Button variant="contained" color="primary" component={Link} to="/add-task">Add Task</Button>
       </div>
       <div className="task-list-container">
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} onTaskCompletion={handleTaskCompletion} />
       </div>
     </Container>
   );
