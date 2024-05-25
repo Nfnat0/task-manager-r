@@ -4,7 +4,7 @@ import Layout from './Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import AddTask from './pages/AddTask';
+import AddEditTask from './pages/AddEditTask';
 import './index.css';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/add-task" element={<AddTask />} />
+          <Route path="/add-edit-task" element={<AddEditTask />} />
         </Routes>
       </Layout>
     </Router>
