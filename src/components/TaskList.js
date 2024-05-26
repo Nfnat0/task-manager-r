@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 import { Link } from 'react-router-dom';
-import './TaskList.css';
 
 const TaskList = ({ tasks, onTaskCompletion }) => {
   return (

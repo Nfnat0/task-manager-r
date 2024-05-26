@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import TaskList from '../components/TaskList';
 import { getTasks, updateTask } from '../api/taskApi';
 import { Link } from 'react-router-dom';
-// import './Home.css';
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
@@ -29,7 +28,7 @@ const Home = () => {
     <Container className="home-container">
       <div className="home-header">
         <Typography variant="h4">Task List</Typography>
-        <Button variant="contained" color="primary" component={Link} to="/add-task">Add Task</Button>
+        <Button variant="contained" color="primary" component={Link} to="/add-edit-task">Add Task</Button>
       </div>
       <div className="task-list-container">
         <TaskList tasks={tasks} onTaskCompletion={handleTaskCompletion} />
