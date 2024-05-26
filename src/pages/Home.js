@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import TaskList from '../components/TaskList';
 import { getTasks, updateTask } from '../api/taskApi';
@@ -27,7 +26,6 @@ const Home = () => {
   return (
     <Container className="home-container">
       <div className="home-header">
-        <Typography variant="h4">Task List</Typography>
         <Button variant="contained" color="primary" component={Link} to="/add-edit-task">Add Task</Button>
       </div>
       <div className="task-list-container">
