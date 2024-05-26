@@ -20,6 +20,9 @@ const theme = createTheme({
     secondary: {
       main: '#9C27B0', // Customize secondary color if needed
     },
+    third: {
+      main: '#ba1111', // Customize secondary color if needed
+    },
   },
 });
 

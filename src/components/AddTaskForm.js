@@ -29,7 +29,7 @@ const AddTaskForm = ({ onAdd }) => {
       <TextField label="Description" value={description} onChange={(e) => setDescription(e.target.value)} fullWidth />
       <TextField label="Priority" value={priority} onChange={(e) => setPriority(e.target.value)} fullWidth />
       <TextField label="Due Date" type="date" value={dueDate} onChange={(e) => setDueDate(e.target.value)} InputLabelProps={{ shrink: true }} fullWidth />
-      <Button type="submit" variant="contained" color="primary">Add Task</Button>
+      <Button type="submit" variant="contained" color="primary">Add</Button>
     </Box>
   );
 };

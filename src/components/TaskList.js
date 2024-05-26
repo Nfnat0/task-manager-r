@@ -10,7 +10,7 @@ const TaskList = ({ tasks, onTaskCompletion }) => {
   return (
     <Box sx={{ mt: 3 }}>
       {tasks.map(task => (
-        <Paper key={task.taskId} sx={{ p: 2, mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Paper key={task.taskId} sx={{ p: 2, mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center', width:'50%'  }}>
           <Box>
             <Checkbox
               checked={task.completed}
