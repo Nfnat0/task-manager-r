@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/add-edit-task" element={<AddEditTask />} />
+          <Route path="/add-edit-task/:taskId?" element={<AddEditTask />} />
         </Routes>
       </Layout>
     </Router>

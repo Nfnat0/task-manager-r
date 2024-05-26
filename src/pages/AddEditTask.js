@@ -8,9 +8,9 @@ import Box from '@mui/material/Box';
 import { createTask, getTaskById, updateTask, deleteTask } from '../api/taskApi';
 
 const AddEditTask = () => {
-  const { id } = useParams();
+  const { taskId } = useParams();
   const navigate = useNavigate();
-  const isEditMode = Boolean(id);
+  const isEditMode = Boolean(taskId);
 
   const [task, setTask] = useState({
     title: '',
@@ -22,12 +22,12 @@ const AddEditTask = () => {
   useEffect(() => {
     if (isEditMode) {
       const fetchTask = async () => {
-        const fetchedTask = await getTaskById(id);
+        const fetchedTask = await getTaskById(taskId);
         setTask(fetchedTask);
       };
       fetchTask();
     }
-  }, [id, isEditMode]);
+  }, [taskId, isEditMode]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +37,7 @@ const AddEditTask = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isEditMode) {
-      await updateTask(id, task);
+      await updateTask(taskId, task);
     } else {
       await createTask(task);
     }
@@ -45,7 +45,7 @@ const AddEditTask = () => {
   };
 
   const handleDelete = async () => {
-    await deleteTask(id);
+    await deleteTask(taskId);
     navigate('/');
   };
 
