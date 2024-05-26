@@ -6,7 +6,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { createTask, getTaskById, updateTask, deleteTask } from '../api/taskApi';
-// import './AddEditTask.css';
 
 const AddEditTask = () => {
   const { id } = useParams();
@@ -52,56 +51,58 @@ const AddEditTask = () => {
   };
 
   return (
-    <Container className="add-edit-task-container">
-      <Typography variant="h4" className="add-edit-task-header">{isEditMode ? 'Edit Task' : 'Add Task'}</Typography>
-      <Box component="form" onSubmit={handleSubmit} className="add-edit-task-form">
-        <TextField
-          label="Title"
-          name="title"
-          value={task.title}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Description"
-          name="description"
-          value={task.description}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Priority"
-          name="priority"
-          value={task.priority}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Label"
-          name="label"
-          value={task.label}
-          onChange={handleChange}
-          fullWidth
-        />
-        <TextField
-          label="Due Date"
-          name="dueDate"
-          type="date"
-          value={task.dueDate}
-          onChange={handleChange}
-          InputLabelProps={{ shrink: true }}
-          fullWidth
-        />
-        <Button type="submit" variant="contained" color="primary">
-          {isEditMode ? 'Update Task' : 'Add Task'}
-        </Button>
-        {isEditMode && (
-          <Button variant="contained" color="secondary" onClick={handleDelete} sx={{ ml: 2 }}>
-            Delete Task
+    <Box sx={{ padding: 4, backgroundColor: 'rgba(255, 255, 255, 0.8)', borderRadius: 2 }}>
+      <Container className="add-edit-task-container">
+        <Typography variant="h4" className="add-edit-task-header">{isEditMode ? 'Edit Task' : 'Add Task'}</Typography>
+        <Box component="form" onSubmit={handleSubmit} className="add-edit-task-form">
+          <TextField
+            label="Title"
+            name="title"
+            value={task.title}
+            onChange={handleChange}
+            fullWidth
+          />
+          <TextField
+            label="Description"
+            name="description"
+            value={task.description}
+            onChange={handleChange}
+            fullWidth
+          />
+          <TextField
+            label="Priority"
+            name="priority"
+            value={task.priority}
+            onChange={handleChange}
+            fullWidth
+          />
+          <TextField
+            label="Label"
+            name="label"
+            value={task.label}
+            onChange={handleChange}
+            fullWidth
+          />
+          <TextField
+            label="Due Date"
+            name="dueDate"
+            type="date"
+            value={task.dueDate}
+            onChange={handleChange}
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+          />
+          <Button type="submit" variant="contained" color="primary">
+            {isEditMode ? 'Update Task' : 'Add Task'}
           </Button>
-        )}
-      </Box>
-    </Container>
+          {isEditMode && (
+            <Button variant="contained" color="secondary" onClick={handleDelete} sx={{ ml: 2 }}>
+              Delete Task
+            </Button>
+          )}
+        </Box>
+      </Container>
+     </Box>
   );
 };
 

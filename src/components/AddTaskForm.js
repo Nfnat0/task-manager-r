@@ -26,7 +26,7 @@ const AddTaskForm = ({ onAdd }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} className="add-task-form">
+    <Box component="form" onSubmit={handleSubmit} className="add-edit-task-form">
       <TextField label="Title" value={title} onChange={(e) => setTitle(e.target.value)} fullWidth />
       <TextField label="Description" value={description} onChange={(e) => setDescription(e.target.value)} fullWidth />
       <TextField label="Priority" value={priority} onChange={(e) => setPriority(e.target.value)} fullWidth />
