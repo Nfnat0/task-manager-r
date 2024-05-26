@@ -16,7 +16,6 @@ const AddEditTask = () => {
     title: '',
     description: '',
     priority: '',
-    label: '',
     dueDate: '',
   });
 
@@ -73,13 +72,6 @@ const AddEditTask = () => {
             label="Priority"
             name="priority"
             value={task.priority}
-            onChange={handleChange}
-            fullWidth
-          />
-          <TextField
-            label="Label"
-            name="label"
-            value={task.label}
             onChange={handleChange}
             fullWidth
           />

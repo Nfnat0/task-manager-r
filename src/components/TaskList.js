@@ -20,11 +20,10 @@ const TaskList = ({ tasks, onTaskCompletion }) => {
             <Typography variant="h6">{task.title}</Typography>
             <Typography variant="body2">{task.description}</Typography>
             <Typography variant="body2">Priority: {task.priority}</Typography>
-            <Typography variant="body2">Label: {task.label}</Typography>
             <Typography variant="body2">Due Date: {task.dueDate}</Typography>
           </Box>
           <Box>
-            <Button variant="contained" color="primary" component={Link} to={`/edit-task/${task.taskId}`} sx={{ mr: 1 }}>Edit</Button>
+            <Button variant="contained" color="primary" component={Link} to={`/add-edit-task/${task.taskId}`} sx={{ mr: 1 }}>Edit</Button>
           </Box>
         </Paper>
       ))}
