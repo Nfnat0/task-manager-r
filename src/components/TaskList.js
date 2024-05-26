@@ -15,7 +15,6 @@ const TaskList = ({ tasks, onTaskCompletion }) => {
             <Checkbox
               checked={task.completed}
               onChange={() => onTaskCompletion(task)}
-              sx={{ display: task.completed ? 'none' : 'inline-block' }}
             />
             <Typography variant="h6">{task.title}</Typography>
             <Typography variant="body2">{task.description}</Typography>
